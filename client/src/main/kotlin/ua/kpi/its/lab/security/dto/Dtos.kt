@@ -1,5 +1,9 @@
 package ua.kpi.its.lab.security.dto
 
+import kotlinx.serialization.Serializable
+import java.io.Serial
+
+@Serializable
 data class SoftwareProductsRequest(
     var name: String,
     var developer: String,
@@ -8,9 +12,10 @@ data class SoftwareProductsRequest(
     var distributionSize: Long,
     var bitness: Int,
     var crossPlatform: Boolean,
-    var module: SotwareModuleRequest
+    var module: SoftwareModuleRequest
 )
 
+@Serializable
 data class SoftwareProductsResponse(
     var id: Long,
     var name: String,
@@ -20,10 +25,11 @@ data class SoftwareProductsResponse(
     var distributionSize: Long,
     var bitness: Int,
     var crossPlatform: Boolean,
-    var module: SotwareModuleResponse
+    var module: SoftwareModuleResponse
 )
 
-data class SotwareModuleRequest(
+@Serializable
+data class SoftwareModuleRequest(
     var description: String,
     var author: String,
     var language: String,
@@ -33,7 +39,8 @@ data class SotwareModuleRequest(
     var crossPlatform: Boolean
 )
 
-data class SotwareModuleResponse(
+@Serializable
+data class SoftwareModuleResponse(
     var id: Long,
     var description: String,
     var author: String,
